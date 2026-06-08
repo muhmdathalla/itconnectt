@@ -17,12 +17,38 @@
         * { box-sizing: border-box !important; }
         body { background-color: #000000 !important; color: #ffffff !important; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
 
-        /* [2] NAVBAR & DOCK LOCK - iOS 26.5 */
-        nav#navbar { z-index: 99999 !important; position: fixed !important; top: 0 !important; width: 100% !important; background: rgba(0,0,0,0.85) !important; backdrop-filter: blur(40px) !important; border-bottom: 1px solid #1a1a1a !important; height: 72px !important; display: flex !important; align-items: center !important; }
-        .nav-container { max-width: 72rem !important; margin: 0 auto !important; padding: 0 1.5rem !important; height: 100% !important; display: flex !important; align-items: center !important; justify-content: space-between !important; }
-        .nav-logo { font-weight: 800 !important; font-size: 1.25rem !important; color: #ffffff !important; text-decoration: none !important; }
-
-        /* [3] DROPDOWN MENU FIX - SOLID BLACK, NO OVERLAP */
+       /* [2] NAVBAR & DOCK LOCK - iOS 26.5 */
+nav#navbar { 
+    z-index: 99999 !important; 
+    position: fixed !important; 
+    top: 0 !important; 
+    left: 0 !important; /* Tambahkan ini agar navbar mengunci dari kiri */
+    width: 100% !important; 
+    background: rgba(0,0,0,0.85) !important; 
+    backdrop-filter: blur(40px) !important; 
+    border-bottom: 1px solid #1a1a1a !important; 
+    height: 72px !important; 
+    /* Hapus display: flex dan align-items dari sini agar tidak merusak container internal */
+}
+.nav-container { 
+    max-width: 72rem !important; 
+    margin: 0 auto !important; 
+    padding: 0 1.5rem !important; 
+    height: 100% !important; 
+    display: flex !important; 
+    align-items: center !important; 
+    justify-content: space-between !important; 
+}
+.nav-logo { 
+    font-weight: 800 !important; 
+    font-size: 1.25rem !important; 
+    color: #ffffff !important; 
+    text-decoration: none !important; 
+    display: flex !important; /* Tambahkan ini agar icon zap dan teks sejajar */
+    align-items: center !important;
+    gap: 8px !important;
+    
+}        /* [3] DROPDOWN MENU FIX - SOLID BLACK, NO OVERLAP */
         .relative.group { position: relative !important; height: 100% !important; display: flex !important; align-items: center !important; }
         .dropdown-menu {
             z-index: 999999 !important; position: absolute !important; top: 100% !important; right: 0 !important;
